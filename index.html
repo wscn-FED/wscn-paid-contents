@@ -6,28 +6,145 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 	<title>WS Paid Contents</title>
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./node_modules/normalize-css/normalize.css">
+	<link rel="stylesheet" href="./node_modules/swiper/dist/css/swiper.min.css">
+	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
 	<script src="./node_modules/swiper/dist/js/swiper.jquery.min.js"></script>
 	<script src="./node_modules/art-template/dist/template.js"></script>
 </head>
 
 <body>
 	<div class="ws-content">
-		<div class="ws-top-bar">
-
-		</div>
 		<div id="ws-carousel"></div>
+		<div class="ws-hot-paid">
+			<a href="#">热门排行</a>
+			<a href="#">已购项目</a>
+		</div>
+		<div id="ws-recommended"></div>
+		<div id="ws-unmissing"></div>
+		<div id="ws-mostrecent"></div>
 	</div>
+	<script id="carousel" type="text/html">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				{{each results as item}}
+					<div class="swiper-slide">
+						<a href="#">
+							<img src={{item.image}} alt={{item.title}} />
+						</a>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</script>
+
+	<script id="recommended" type="text/html">
+		<section class="recommend group">
+			<header class="title">
+				<h1>精选推荐</h1>
+			</header>
+			<div class="section-content">
+				<div class="reco-swiper-container">
+					<div class="swiper-wrapper">
+						{{each results as item}}
+							<div class="reco-item swiper-slide">
+								<div class="reco-item-cover">
+									<img src={{item.image}} alt={{item.title}} />
+								</div>
+								<h2 class="reco-item-title">{{item.title}}</h2>
+								<div class="reco-price">&#165;{{item.price}}/年</div>
+							</div>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+		</section>
+	</script>
+	<script id="unmissing" type="text/html">
+		<section class="unmissing group">
+			<header class="title">
+				<h1>不可错过</h1>
+			</header>
+			<div class="section-content">
+				{{each unmissing as item}}
+					<div class="normal-item">
+						<div class="normal-body">
+							<div class="normal-info">
+								<img src={{item.image}} alt={{item.title}} />
+								<div class="info-right">
+									<div class="info-title">{{item.title}}</div>
+									<div class="info-summary">{{item.summary}}</div>
+									<div class="info-icon-group">
+										{{each item.tags as tag}}
+											<span>{{tag}}</span>
+										{{/each}}
+									</div>
+									<div class="info-price">
+										{{if item.isPaid}}
+											<span class="is-paid">已购买</span>
+										{{else}}
+											<span class="is-not-paid">&#165;{{item.price}}/年</span>
+										{{/if}}
+									</div>
+								</div>
+							</div>
+							<div class="reco-rating">
+								<a href="{{item.recommendRating.url}}">
+									<img class="rating-avatar" src={{item.recommendRating.avatar}} alt={{item.recommendRating.username}} />
+								</a>
+								<div class="rating-text-info">
+									<a class="rating-link" href="{{item.recommendRating.url}}">{{item.recommendRating.username}}</a>
+									<div class="rating-content">{{item.recommendRating.content}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</section>
+	</script>
+	<script id="mostrecent" type="text/html">
+		<section class="mostrecent group">
+			<header class="title">
+				<h1>最新更新</h1>
+			</header>
+			<div class="section-content">
+				{{each mostrecent as item}}
+					<div class="normal-item">
+						<div class="normal-body">
+							<div class="normal-info">
+								<img src={{item.image}} alt={{item.title}} />
+								<div class="info-right">
+									<div class="info-title">{{item.title}}</div>
+									<div class="info-summary">{{item.summary}}</div>
+									<div class="info-icon-group">
+										{{each item.tags as tag}}
+											<span>{{tag}}</span>
+										{{/each}}
+									</div>
+									<div class="info-price">
+										{{if item.isPaid}}
+											<span class="is-paid">已购买</span>
+										{{else}}
+											<span class="is-not-paid">&#165;{{item.price}}/年</span>
+										{{/if}}
+									</div>
+								</div>
+							</div>
+							<div class="reco-rating">
+								<a href="{{item.recommendRating.url}}">
+									<img class="rating-avatar" src={{item.recommendRating.avatar}} alt={{item.recommendRating.username}} />
+								</a>
+								<div class="rating-text-info">
+									<a class="rating-link" href="{{item.recommendRating.url}}">{{item.recommendRating.username}}</a>
+									<div class="rating-content">{{item.recommendRating.content}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</section>
+	</script>
 </body>
-
-
-
-<script id="carousel" type="text/html">
-	{{each results as item}}
-		<a>
-			<img src={{item.image}} alt={{item.title}} />
-		</a>
-	{{/each}}
-</script>
 </html>

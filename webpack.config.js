@@ -40,11 +40,13 @@ var config = {
   },
   externals: {
     "jquery": {
-      root: '$',
+      root: 'jQuery',
       commonjs2: 'jquery',
       commonjs: 'jquery',
       amd: 'jquery'
-    }
+    },
+    "template": "template",
+    "Swiper": "Swiper"
   },
   module: {
     loaders: [

@@ -7,144 +7,53 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 	<title>WS Paid Contents</title>
 	<link rel="stylesheet" href="./node_modules/normalize-css/normalize.css">
-	<link rel="stylesheet" href="./node_modules/swiper/dist/css/swiper.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" >
 	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="./node_modules/swiper/dist/js/swiper.jquery.min.js"></script>
 	<script src="./node_modules/art-template/dist/template.js"></script>
+	<script src="./src/lib/ws-audio-player.min.js"></script>
 </head>
 
 <body>
 	<div class="ws-content">
-		<div id="ws-carousel"></div>
-		<div class="ws-hot-paid">
-			<a href="#">热门排行</a>
-			<a href="#">已购项目</a>
-		</div>
-		<div id="ws-recommended"></div>
-		<div id="ws-unmissing"></div>
-		<div id="ws-mostrecent"></div>
-	</div>
-	<script id="carousel" type="text/html">
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				{{each results as item}}
-					<div class="swiper-slide">
-						<a href="#">
-							<img src={{item.image}} alt={{item.title}} />
-						</a>
-					</div>
-				{{/each}}
-			</div>
-		</div>
-	</script>
-
-	<script id="recommended" type="text/html">
-		<section class="recommend group">
-			<header class="title">
-				<h1>精选推荐</h1>
-			</header>
-			<div class="section-content">
-				<div class="reco-swiper-container">
-					<div class="swiper-wrapper">
-						{{each results as item}}
-							<div class="reco-item swiper-slide">
-								<div class="reco-item-cover">
-									<img src={{item.image}} alt={{item.title}} />
-								</div>
-								<h2 class="reco-item-title">{{item.title}}</h2>
-								<div class="reco-price">&#165;{{item.price}}/年</div>
+		<div class="ws-detail">
+			<div class="top-cover">
+				<div class="cover-info">
+					<div class="detail-title">华尔街富豪爱在哪里买房？</div>
+					<div class="rating-info">
+							<div class="user-info">
+								<a href="#">
+									<img class="user-avatar" src="https://dn-wscn-avatar.qbox.me/character_cartoon/41.jpg" alt="Allovince">
+								</a>
+								<span class="rating-content">听了你就明白马克思想干什么了</span>
 							</div>
-						{{/each}}
+							<span class="detail-time">9月19日</span>
 					</div>
 				</div>
 			</div>
-		</section>
-	</script>
-	<script id="unmissing" type="text/html">
-		<section class="unmissing group">
-			<header class="title">
-				<h1>不可错过</h1>
-			</header>
-			<div class="section-content">
-				{{each unmissing as item}}
-					<div class="normal-item">
-						<div class="normal-body">
-							<div class="normal-info">
-								<img src={{item.image}} alt={{item.title}} />
-								<div class="info-right">
-									<div class="info-title">{{item.title}}</div>
-									<div class="info-summary">{{item.summary}}</div>
-									<div class="info-icon-group">
-										{{each item.tags as tag}}
-											<span>{{tag}}</span>
-										{{/each}}
-									</div>
-									<div class="info-price">
-										{{if item.isPaid}}
-											<span class="is-paid">已购买</span>
-										{{else}}
-											<span class="is-not-paid">&#165;{{item.price}}/年</span>
-										{{/if}}
-									</div>
-								</div>
-							</div>
-							<div class="reco-rating">
-								<a href="{{item.recommendRating.url}}">
-									<img class="rating-avatar" src={{item.recommendRating.avatar}} alt={{item.recommendRating.username}} />
-								</a>
-								<div class="rating-text-info">
-									<a class="rating-link" href="{{item.recommendRating.url}}">{{item.recommendRating.username}}</a>
-									<div class="rating-content">{{item.recommendRating.content}}</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				{{/each}}
+			<div id="audio-container"></div>
+			<div class="detail-body">
+				<div class="detail-content-title">
+					标准化VS非标准化
+				</div>
 			</div>
-		</section>
-	</script>
-	<script id="mostrecent" type="text/html">
-		<section class="mostrecent group">
-			<header class="title">
-				<h1>最新更新</h1>
-			</header>
-			<div class="section-content">
-				{{each mostrecent as item}}
-					<div class="normal-item">
-						<div class="normal-body">
-							<div class="normal-info">
-								<img src={{item.image}} alt={{item.title}} />
-								<div class="info-right">
-									<div class="info-title">{{item.title}}</div>
-									<div class="info-summary">{{item.summary}}</div>
-									<div class="info-icon-group">
-										{{each item.tags as tag}}
-											<span>{{tag}}</span>
-										{{/each}}
-									</div>
-									<div class="info-price">
-										{{if item.isPaid}}
-											<span class="is-paid">已购买</span>
-										{{else}}
-											<span class="is-not-paid">&#165;{{item.price}}/年</span>
-										{{/if}}
-									</div>
-								</div>
-							</div>
-							<div class="reco-rating">
-								<a href="{{item.recommendRating.url}}">
-									<img class="rating-avatar" src={{item.recommendRating.avatar}} alt={{item.recommendRating.username}} />
-								</a>
-								<div class="rating-text-info">
-									<a class="rating-link" href="{{item.recommendRating.url}}">{{item.recommendRating.username}}</a>
-									<div class="rating-content">{{item.recommendRating.content}}</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				{{/each}}
-			</div>
-		</section>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		$(function() {
+			var audio = new WSAudioPlayer({
+        container: 'audio-container',
+        audio: {
+          src: 'http://7xj610.com1.z0.glb.clouddn.com/New%20Empire%20-%20A%20Little%20Braver.mp3',
+          title: '华尔街也爱小户型',
+          size: '11.32MB'
+        },
+        autoPlay: false,
+        loop: false
+      })
+		});
 	</script>
 </body>
+
 </html>

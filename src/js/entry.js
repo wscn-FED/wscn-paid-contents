@@ -1,7 +1,5 @@
 
 require('../scss/home.scss');
-
-
 function successHandler(data) {
   var carouselHtml = template('carousel', data.carousel);
   $('#ws-carousel').html(carouselHtml);
@@ -43,4 +41,4 @@ $.ajax({
   error: function(err) {
     console.log(err);
   }
-})
+});

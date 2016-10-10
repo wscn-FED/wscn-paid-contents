@@ -92,8 +92,8 @@ header.title h1 {
   color: #EFA60D;
 }
 .normal-item {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #dcdcdc;
 }
 .section-content .normal-item:first-child {
@@ -101,6 +101,7 @@ header.title h1 {
 }
 .section-content .normal-item:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 .normal-info {
   display: flex;

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<title>WS Paid Contents</title>
+	<link rel="stylesheet" href="../../node_modules/normalize-css/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" >
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../../node_modules/art-template/dist/template.js"></script>
+	<script src="../lib/ws-audio-player.min.js"></script>
+</head>
+
+<body>
+	<div class="ws-content">
+		<div class="ws-detail">
+			<div class="top-cover">
+				<div class="cover-info">
+					<div class="detail-title">华尔街富豪爱在哪里买房？</div>
+					<div class="rating-info">
+							<div class="user-info">
+								<a href="#">
+									<img class="user-avatar" src="https://dn-wscn-avatar.qbox.me/character_cartoon/41.jpg" alt="Allovince">
+								</a>
+								<span class="rating-content">听了你就明白马克思想干什么了</span>
+							</div>
+							<span class="detail-time">9月19日</span>
+					</div>
+				</div>
+			</div>
+			<div id="audio-container"></div>
+			<div class="detail-body">
+				<div class="detail-content-title">
+					标准化VS非标准化
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/static/ws-detail.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var audio = new WSAudioPlayer({
+        container: 'audio-container',
+        audio: {
+          src: 'http://7xj610.com1.z0.glb.clouddn.com/New%20Empire%20-%20A%20Little%20Braver.mp3',
+          title: '华尔街也爱小户型',
+          size: '11.32MB'
+        },
+        autoPlay: false,
+        loop: false
+      })
+		});
+	</script>
+</body>
+
+</html>

@@ -1,4 +1,3 @@
-
 require('../scss/home.scss');
 function successHandler(data) {
   var carouselHtml = template('carousel', data.carousel);

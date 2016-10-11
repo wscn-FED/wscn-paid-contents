@@ -1,0 +1,54 @@
+.ws-content {
+  width: 100%;
+  height: 100%;
+  background-color: #F2F2F2;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+.top-cover {
+  height: 215px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  background-image: url("https://wpimg.wallstcn.com/95/a7/06/t.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cover-info {
+  width: 100%;
+  padding: 15px;
+}
+.detail-title {
+  font-size: 27px;
+  color: #ffffff;
+}
+.rating-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  a {
+    font-size: 0;
+  }
+  .user-avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+}
+.rating-content, .detail-time {
+  padding-left: 8px;
+  font-size: 12px;
+  color: #dcdcdc;
+}
+.detail-content-title {
+  font-size: 15px;
+  color: #333333;
+}

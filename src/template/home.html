@@ -6,11 +6,11 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 	<title>WS Paid Contents</title>
-	<link rel="stylesheet" href="./node_modules/normalize-css/normalize.css">
-	<link rel="stylesheet" href="./node_modules/swiper/dist/css/swiper.min.css">
-	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="./node_modules/swiper/dist/js/swiper.jquery.min.js"></script>
-	<script src="./node_modules/art-template/dist/template.js"></script>
+	<link rel="stylesheet" href="../../node_modules/normalize-css/normalize.css">
+	<link rel="stylesheet" href="../../node_modules/swiper/dist/css/swiper.min.css">
+	<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="../../node_modules/swiper/dist/js/swiper.jquery.min.js"></script>
+	<script src="../../node_modules/art-template/dist/template.js"></script>
 </head>
 
 <body>
@@ -89,12 +89,12 @@
 								</div>
 							</div>
 							<div class="reco-rating">
-								<a href="{{item.recommendRating.url}}">
-									<img class="rating-avatar" src={{item.recommendRating.avatar}} alt={{item.recommendRating.username}} />
+								<a href="{{item.topic.recommendRating.url}}">
+									<img class="rating-avatar" src={{item.topic.recommendRating.avatar}} alt={{item.topic.recommendRating.username}} />
 								</a>
 								<div class="rating-text-info">
-									<a class="rating-link" href="{{item.recommendRating.url}}">{{item.recommendRating.username}}</a>
-									<div class="rating-content">{{item.recommendRating.content}}</div>
+									<a class="rating-link" href="{{item.topic.recommendRating.url}}">{{item.topic.recommendRating.username}}</a>
+									<div class="rating-content">{{item.topic.recommendRating.content}}</div>
 								</div>
 							</div>
 						</div>
@@ -132,12 +132,12 @@
 								</div>
 							</div>
 							<div class="reco-rating">
-								<a href="{{item.recommendRating.url}}">
-									<img class="rating-avatar" src={{item.recommendRating.avatar}} alt={{item.recommendRating.username}} />
+								<a href="{{item.topic.recommendRating.url}}">
+									<img class="rating-avatar" src={{item.topic.recommendRating.avatar}} alt={{item.topic.recommendRating.username}} />
 								</a>
 								<div class="rating-text-info">
-									<a class="rating-link" href="{{item.recommendRating.url}}">{{item.recommendRating.username}}</a>
-									<div class="rating-content">{{item.recommendRating.content}}</div>
+									<a class="rating-link" href="{{item.topic.recommendRating.url}}">{{item.topic.recommendRating.username}}</a>
+									<div class="rating-content">{{item.topic.recommendRating.content}}</div>
 								</div>
 							</div>
 						</div>
@@ -146,5 +146,6 @@
 			</div>
 		</section>
 	</script>
+	<script src="/static/ws-home.js"></script>
 </body>
 </html>

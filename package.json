@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --progress --hot --content-base ./",
-    "build": "./node_modules/.bin/webpack --production"
+    "dev": "node ./server.js",
+    "build": "rm -r ./dist && ./node_modules/.bin/webpack --production"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,7 @@
     "postcss-inline-svg": "^2.1.2",
     "postcss-loader": "^0.13.0",
     "postcss-svgo": "^2.1.5",
+    "react-hot-loader": "^3.0.0-beta.5",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
